@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HABI API — REST API Downloader</title>
+<meta name="description" content="HABI API — REST API downloader YouTube MP3/MP4. Gratis, cepat, mudah.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.6}
+.hero{background:linear-gradient(135deg,#5e0c12,#a31515);padding:70px 20px;text-align:center}
+.hero h1{font-size:3rem;color:#ffd700;text-shadow:2px 2px 8px #000}
+.hero p{font-size:1.2rem;margin-top:10px;color:#ffe9a8}
+.badge{display:inline-block;background:#00000055;border:1px solid #ffd700;border-radius:99px;padding:6px 16px;margin-top:16px;color:#ffd700;font-size:.9rem}
+.wrap{max-width:900px;margin:0 auto;padding:40px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:30px 0}
+.card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:22px}
+.card h3{color:#ffd700;margin-bottom:8px}
+code,pre{background:#0d1117;border:1px solid #30363d;border-radius:8px;font-family:ui-monospace,monospace}
+code{padding:2px 8px;font-size:.9em}
+pre{padding:16px;overflow-x:auto;margin:10px 0;font-size:.85rem}
+.btn{display:inline-block;background:#a31515;color:#fff;text-decoration:none;padding:12px 28px;border-radius:10px;font-weight:bold;margin-top:10px}
+.btn:hover{background:#c41818}
+section{margin:40px 0}
+h2{color:#ffd700;border-bottom:1px solid #30363d;padding-bottom:8px;margin-bottom:16px}
+table{width:100%;border-collapse:collapse}
+td,th{border:1px solid #30363d;padding:10px;text-align:left}
+th{background:#161b22;color:#ffd700}
+footer{text-align:center;padding:30px;color:#8b949e;border-top:1px solid #30363d;margin-top:40px}
+a{color:#ff6b6b}
+</style>
+</head>
+<body>
+<div class="hero">
+<h1>HABI API</h1>
+<p>REST API Downloader — YouTube MP3 & MP4, cepat &amp; gratis</p>
+<div class="badge">v1.0 • Powered by HABI AI</div>
+</div>
+<div class="wrap">
+<section>
+<h2>✨ Fitur</h2>
+<div class="grid">
+<div class="card"><h3>🎵 YouTube → MP3</h3>Konversi audio cepat, kualitas jernih.</div>
+<div class="card"><h3>🎬 YouTube → MP4</h3>Video hingga 720p, siap putar.</div>
+<div class="card"><h3>📋 Info Video</h3>Judul, durasi, channel, thumbnail.</div>
+<div class="card"><h3>🔑 API Key Gratis</h3>25 request/hari, daftar instan tanpa login.</div>
+</div>
+</section>
+<section>
+<h2>🚀 Cara Pakai</h2>
+<p>1. Daftarkan API key:</p>
+<pre>GET /api/register?note=nama-kamu</pre>
+<p>2. Pakai key untuk download:</p>
+<pre>GET /api/ytmp3?url=https://youtu.be/xxxx&apikey=KEY_KAMU
+GET /api/ytmp4?url=https://youtu.be/xxxx&apikey=KEY_KAMU
+GET /api/info?url=https://youtu.be/xxxx&apikey=KEY_KAMU</pre>
+<p>Limit <b>25 req/hari</b> untuk akun gratis. Butuh lebih? Hubungi owner untuk upgrade premium.</p>
+<a class="btn" href="/docs.html">📖 Dokumentasi Lengkap</a>
+</section>
+<section>
+<h2>📌 Ketentuan</h2>
+<table>
+<tr><th>Kebijakan</th><th>Keterangan</th></tr>
+<tr><td>Rate limit</td><td>25 request/hari per key (free)</td></tr>
+<tr><td>File hasil</td><td>Dihapus otomatis setelah 15 menit</td></tr>
+<tr><td>Dilarang</td><td>Abuse, spam, konten ilegal</td></tr>
+</table>
+</section>
+</div>
+<footer>© 2026 HABI AI • Habibih Cloud Official ID • <a href="https://wa.me/6285181576338">WhatsApp Owner</a></footer>
+</body>
+</html>

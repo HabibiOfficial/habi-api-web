@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>HABI API — Docs</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,sans-serif;background:#0d1117;color:#e6edf3;line-height:1.7;padding:40px 20px}
+.wrap{max-width:860px;margin:0 auto}
+h1{color:#ffd700}h2{color:#ffd700;margin:30px 0 10px}
+pre{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px;overflow-x:auto;margin:10px 0;font-size:.85rem;font-family:ui-monospace,monospace}
+code{color:#7ee787}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+td,th{border:1px solid #30363d;padding:9px;text-align:left}
+th{background:#161b22;color:#ffd700}
+a{color:#ff6b6b}
+</style>
+</head>
+<body><div class="wrap">
+<h1>📖 HABI API — Dokumentasi</h1>
+<p>Base URL: <code>http://140.245.32.37:3000</code></p>
+
+<h2>1. Daftar API Key</h2>
+<pre>GET /api/register?note=nama-kamu</pre>
+<p>Response:</p>
+<pre>{"status":true,"apikey":"HABI-XXXXXXXXXXXX","limit":"25 req/hari"}</pre>
+
+<h2>2. Info Video</h2>
+<pre>GET /api/info?url=https://youtu.be/xxxx&apikey=KEY</pre>
+
+<h2>3. Download MP3</h2>
+<pre>GET /api/ytmp3?url=https://youtu.be/xxxx&apikey=KEY</pre>
+<p>Response: file audio (attachment).</p>
+
+<h2>4. Download MP4</h2>
+<pre>GET /api/ytmp4?url=https://youtu.be/xxxx&apikey=KEY</pre>
+<p>Response: file video MP4 720p (attachment).</p>
+
+<h2>Parameter</h2>
+<table>
+<tr><th>Param</th><th>Wajib</th><th>Ket</th></tr>
+<tr><td>url</td><td>✅</td><td>Link YouTube (youtube.com / youtu.be)</td></tr>
+<tr><td>apikey</td><td>✅</td><td>Key dari /api/register</td></tr>
+<tr><td>note</td><td>—</td><td>Nama kamu saat register (opsional)</td></tr>
+</table>
+
+<h2>Error</h2>
+<table>
+<tr><th>Kode</th><th>Arti</th></tr>
+<tr><td>401</td><td>APIkey tidak valid</td></tr>
+<tr><td>429</td><td>Limit harian tercapai</td></tr>
+<tr><td>500</td><td>Gagal download (video/private/bot-check)</td></tr>
+</table>
+<p><a href="/">← Kembali</a></p>
+</div></body></html>
