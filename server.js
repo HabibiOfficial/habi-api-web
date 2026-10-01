@@ -12,7 +12,6 @@ import { Readable } from 'node:stream'
 import { readFileSync } from 'node:fs'
 import * as downloader from './api/downloader.mjs'
 import * as imageTools from './api/image-tools.mjs'
-import * as saldoTools from './api/saldo.mjs'
 import * as mediaTools from './api/media.mjs'
 import * as studioTools from './api/studio.mjs'
 
@@ -338,29 +337,6 @@ native('/api/humanizer', (req) =>
   })
 )
 
-/* ---------------------------------------------------------
- * Kartu saldo SIMULASI
- *
- * Hanya untuk demo/uji coba. Kartu SELALU diberi watermark
- * "SIMULASI" yang tidak bisa dimatikan, jadi tidak bisa
- * dipakai membuat bukti transfer palsu.
- * ------------------------------------------------------- */
-app.get('/api/saldo', requireKey, async (req, res) => {
-  const started = Date.now()
-  try {
-    const buf = await saldoTools.renderSaldo({
-      nominal: req.query.nominal ?? 0,
-      nama: req.query.nama || 'Pengguna',
-      catatan: req.query.catatan || undefined,
-      merk: req.query.merk || 'SIMULASI',
-    })
-    sendImage(res, buf, { filename: 'saldo-simulasi.png', download: BOOLS(req.query.download, false) })
-    if (process.env.LOG_NATIVE === '1') console.log(`  \x1b[36m⏱\x1b[0m  /api/saldo → ${Date.now() - started}ms`)
-  } catch (err) {
-    console.error(`  \x1b[31m✗\x1b[0m  /api/saldo: ${err.message}`)
-    res.status(400).json({ status: false, error: err.message })
-  }
-})
 
 /** Bungkus handler jadi route yang mewajibkan API key */
 function secured(pathname, handler) {
